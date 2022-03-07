@@ -1,9 +1,9 @@
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Container from '../components/Container'
-import Hero from '../components/Hero'
-import MyWork from '../components/MyWork'
-import Quote from '../components/Quote'
+import Container from '../Components/Container'
+import Hero from '../Components/Hero'
+import MyWork from '../Components/MyWork'
+import Quote from '../Components/Quote'
 
 import { ScrollProvider } from '../Contexts/scrollContext'
 
