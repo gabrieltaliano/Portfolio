@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Matrix4 } from 'Components/Matrix'
+import { Matrix4 } from 'components/Matrix'
 import Link from 'next/link'
 import ShowOnScroll from './ShowOnScroll'
 import SizedText from './SizedText'
@@ -33,7 +33,7 @@ export default function Hero({ offsetHeight = 0, scrollTop = 0 }) {
         <div className='min-h-screen grow flex flex-nowrap flex-col overflow-hidden justify-center items-center relative bg-black snap-center'>
             <div className="w-full h-full flex flex-col justify-center items-center gap-0 ">
                 <div className='grow w-full bg-gradient-to-t from-white to-transparent z-20' />
-                <Matrix4 className='absolute z-10' width={width} height={height} />
+                {/* <Matrix4 className='absolute z-10' width={width} height={height} /> */}
                 <ShowOnScroll offset={-100} mode='fadeOut' className='duration-500 w-full text-black bg-white mix-blend-screen z-20 flex'>
                     <SizedText
                         className='text-black mx-auto font-alfa-slab uppercase fadein pt-2'

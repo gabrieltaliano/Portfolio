@@ -1,9 +1,9 @@
-import History from 'Components/MyWork'
-import Quote from 'Components/Quote'
-import Hero from 'Components/Hero'
+import History from 'components/MyWork'
+import Quote from 'components/Quote'
+import Hero from 'components/Hero'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Container from '../Components/Container'
+import Container from '../components/Container'
 import { ScrollProvider } from '../Contexts/scrollContext'
 
 const Home: NextPage = () => {
@@ -22,14 +22,9 @@ const Home: NextPage = () => {
       {/* <span className='absolute top-0 left-0 bg-black text-green-400 text-sm whitespace-pre z-50 border-[1px] border-slate-500'>{JSON.stringify({ containerData }, null, 2)}</span> */}
       <ScrollProvider>
         <Container>
-
-
           <Hero />
           <Quote />
           <History />
-
-
-
         </Container>
       </ScrollProvider>
     </div>
