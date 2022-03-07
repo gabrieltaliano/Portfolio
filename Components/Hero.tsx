@@ -1,8 +1,10 @@
 import { useEffect, useState } from 'react'
-import { Matrix4 } from 'components/Matrix'
+import { Matrix4 } from './Matrix'
 import Link from 'next/link'
+
 import ShowOnScroll from './ShowOnScroll'
 import SizedText from './SizedText'
+
 
 export default function Hero({ offsetHeight = 0, scrollTop = 0 }) {
     const [width, setWidth] = useState(0)

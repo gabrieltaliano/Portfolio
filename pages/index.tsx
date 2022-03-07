@@ -1,10 +1,10 @@
-import History from 'components/MyWork'
-import Quote from 'components/Quote'
-import Hero from 'components/Hero'
 import type { NextPage } from 'next'
 import Head from 'next/head'
-import Container from '../components/Container'
+import Quote from 'components/Quote'
+import Hero from 'components/Hero'
+import Container from 'components/Container'
 import { ScrollProvider } from '../Contexts/scrollContext'
+import MyWork from 'components/MyWork'
 
 const Home: NextPage = () => {
 
@@ -24,7 +24,7 @@ const Home: NextPage = () => {
         <Container>
           <Hero />
           <Quote />
-          <History />
+          <MyWork />
         </Container>
       </ScrollProvider>
     </div>
