@@ -19,10 +19,6 @@ a {
   box-sizing: border-box;
 }
 
-h1 {
-  /* font-family: 'Alfa Slab One', cursive; */
-}
-
 .image-container {
   /* background-image: url("img_nature.jpg"); */
   background-size: cover;
