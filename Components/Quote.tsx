@@ -1,6 +1,6 @@
 import Link from "next/link";
-import Positions from "components/Positions";
-import ShowOnScroll from "components/ShowOnScroll"
+import Positions from "./Positions";
+import ShowOnScroll from "./ShowOnScroll"
 import { useInView } from 'react-intersection-observer';
 
 

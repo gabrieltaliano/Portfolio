@@ -1,5 +1,5 @@
-import useScroll from 'Hooks/useScroll';
 import { useEffect, useRef, ReactNode } from 'react'
+import useScroll from '../Hooks/useScroll';
 
 interface MyProps {
     children?: ReactNode;
