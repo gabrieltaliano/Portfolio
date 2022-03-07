@@ -1,4 +1,4 @@
-import ShowOnScroll from "components/ShowOnScroll"
+import ShowOnScroll from "components/ShowOnScroll";
 
 export default function Positions() {
     interface positions {
