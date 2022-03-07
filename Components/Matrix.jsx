@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
 import dynamic from 'next/dynamic'
-// import p5 from 'p5'
 const langs = [
     "Gabriel Taliano",
     "ReactJs",
@@ -60,99 +59,7 @@ const langs = [
     "Help Desk",
 ];
 
-// Will only import `react-p5` on client-side
-const Sketch = dynamic(() => import('react-p5').then((mod) => mod.default), {
-    ssr: false,
-})
-
-
-export function Matrix1(props, state) {
-    let colors = ['blue', 'green', 'red'];
-
-    const setup = (p5, canvasParentRef) => {
-        p5.createCanvas(500, 400).parent(canvasParentRef)
-    };
-
-    const draw = (p5) => {
-        let y = 0;
-        let direction = '^';
-
-        p5.background(0);
-        p5.fill(255, y * 1.3, 0);
-        p5.ellipse(p5.width / 2, y, 50);
-        if (y > p5.height) direction = '';
-        if (y < 0) {
-            direction = '^';
-        }
-        if (direction === '^') y += 8;
-        else y -= 4;
-    };
-    // const draw = p5 => {
-    //     p5.background(255, 130, 20)
-    //     p5.ellipse(100, 100, 100)
-    //     p5.ellipse(300, 100, 100)
-    // }
-    return (
-        // <Anime delay={anime.stagger(100)} scale={[0.1, 0.9]}>
-        //     {colors.map((color, i) => <div key={i} className={`bg-blue-500 w-10 h-10`}>{color}</div>)}
-        // </Anime>
-        // <Anime easing="easeOutElastic"
-        //     loop={true}
-        //     duration={1000}
-        //     direction="alternate"
-        //     delay={(el, index) => index * 240}
-        //     translateX='13rem'
-        //     scale={[.75, .9]}>
-        //     <div className="bg-blue-500 w-5 h-5" />
-        //     <div className="bg-green-500 w-5 h-5" />
-        //     <div className="bg-red-500 w-5 h-5" />
-        // </Anime>
-        <Sketch setup={setup} draw={draw} />
-    )
-}
-
-
-
-export class Matrix2 extends React.Component {
-    y = 0;
-    direction = '^';
-
-    setup = (p5, parentRef) => {
-        p5.createCanvas(200, 200).parent(parentRef);
-    };
-
-    draw = (p5) => {
-        p5.background(0);
-        p5.fill(255, this.y * 1.3, 0);
-        p5.ellipse(p5.width / 2, this.y, 50);
-        if (this.y > p5.height) this.direction = '';
-        if (this.y < 0) {
-            this.direction = '^';
-        }
-        if (this.direction === '^') this.y += 8;
-        else this.y -= 4;
-    };
-
-    render() {
-        return (
-
-            <Sketch setup={this.setup} draw={this.draw} />
-
-        );
-    }
-}
-
-
-
-
-
-
-//! -------------------------------
-
-
-
 let charSize = 18;
-let fallRate = charSize / 2;
 let streams;
 
 class Char {
@@ -227,98 +134,14 @@ function createStreams(p5) {
     }
 }
 
-
-
-
-
-function windowResized() {
-    resizeCanvas(innerWidth, innerHeight);
-    background(0);
-    reset();
-}
-
 function reset(p5) {
     streams = [];
     createStreams(p5);
-}
-export class Matrix3OLD extends React.Component {
-
-    setup(p5, canvasParentRef, width, height) {
-        p5.createCanvas(width, height).parent(canvasParentRef);
-        p5.background(255, 130, 20)
-        reset(p5);
-        p5.frameRate(20);
-        p5.colorMode(p5.HSB);
-        p5.noStroke();
-        p5.textSize(charSize);
-        p5.textFont("monospace");
-        p5.background(0);
-
-    }
-
-    draw(p5) {
-        p5.background(0, 0.4);
-
-        streams.forEach((s) => {
-            // window.alert('s')
-            s.draw()
-        });
-
-    }
-
-
-    render() {
-        return (
-            <Sketch setup={(p5, canvasParentRef) => this.setup(p5, canvasParentRef, this.props.width, this.props.height)} draw={this.draw} />
-        )
-    }
-}
-export function Matrix3({ width, height }) {
-
-    function setup(p5, canvasParentRef, width, height) {
-        p5.createCanvas(width, height).parent(canvasParentRef);
-        p5.background(255, 130, 20)
-        reset(p5);
-        p5.frameRate(20);
-        p5.colorMode(p5.HSB);
-        p5.noStroke();
-        p5.textSize(charSize);
-        p5.textFont("monospace");
-        p5.background(0);
-
-    }
-
-    function draw(p5) {
-        p5.background(0, 0.4);
-
-        streams.forEach((s) => {
-            // window.alert('s')
-            s.draw()
-        });
-
-    }
-
-    // useEffect(() => {
-    //     reset(window.p5)
-    // }, [width, height])
-
-    useEffect(() => {
-        console.log({ p5: window.p5 })
-    }, [width, height])
-
-    return (
-        <>
-            <button onClick={() => { reset(window.p5.start()) }}>reset</button>
-            <Sketch setup={(p5, canvasParentRef) => setup(p5, canvasParentRef, width, height)} draw={draw} />
-        </>
-    )
 }
 
 
 export function Matrix4({ width, height, className = '' }) {
 
-
-    const [count, setCount] = useState(0);
     const [p5instance, setp5instance] = useState(false)
 
     const containerRef = useRef(null);
@@ -375,7 +198,7 @@ export function Matrix4({ width, height, className = '' }) {
             }
         },
         // This empty list tells React that this effect never needs to get re-rendered!
-        [count, p5instance, width, height]
+        [ p5instance, width, height]
     );
     return (
         <div className={className} ref={containerRef}></div>

@@ -1,4 +1,4 @@
-import { useEffect, useState, useRef, ReactNode, FunctionComponent } from 'react'
+import { useEffect, useRef, ReactNode } from 'react'
 import useScroll from "../Hooks/useScroll"
 
 
@@ -8,23 +8,22 @@ interface MyProps {
 }
 
 
-export default function Container({ children }: MyProps) {
+export default function Container({ children }: any) {
 
 
     const containerRef = useRef<HTMLInputElement>(null!)
 
-    const { scrollTop, setScrollTop } = useScroll()
+    const { setScrollTop } = useScroll()
 
     const handleScroll = () => {
         if (containerRef.current) {
-            const { offsetHeight, offsetTop, scrollHeight, scrollTop } = containerRef.current
-            // setContainerData({ offsetHeight, offsetTop, scrollHeight, scrollTop })
+            const { scrollTop } = containerRef.current //offsetHeight, offsetTop, scrollHeight, scrollTop
             setScrollTop(scrollTop)
         }
     }
 
     useEffect(() => {
-        const { offsetHeight, offsetTop, scrollHeight, scrollTop } = containerRef.current
+        const { scrollTop } = containerRef.current
         setScrollTop(scrollTop)
     }, [setScrollTop])
 
