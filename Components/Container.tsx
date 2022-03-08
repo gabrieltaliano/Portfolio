@@ -27,11 +27,12 @@ export default function Container({ children }: any) {
 
 
     return (
-        <main
-            className='h-full flex flex-col grow bg-gray-400 overflow-auto scroll-smooth snap-proximity snap-y'
-            ref={containerRef} onScroll={handleScroll}
-        >
-            {children}
-        </main>
-    )
+      <main
+        className="h-full flex flex-col grow bg-gray-400 overflow-auto scroll-smooth select-none"
+        ref={containerRef}
+        onScroll={handleScroll}
+      >
+        {children}
+      </main>
+    );
 }

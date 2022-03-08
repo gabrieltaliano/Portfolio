@@ -1,29 +1,26 @@
 import React, { useState, useEffect, useRef } from 'react'
 
 const langs = [
-    "Gabriel Taliano",
     "ReactJs",
+    "React Native",
     "Node",
     "Css",
     "Tailwinds",
     "Firebase",
+    "Firestores",
     "GCP",
     "SysAdmin",
     "Sqlite",
     "IIS",
-    "Figma",
     "SCCM",
     "Esxi",
     "Technical Aptitude",
     "Jira",
     "Redux",
     "FCP",
-    "Lightroom",
     "Photoshop",
-    "PLC",
     "ITIL Service Management",
     "Information Technology Service Management",
-    "ISS",
     "Server Management",
     "Storage Services",
     "Windows Server",
@@ -33,28 +30,20 @@ const langs = [
     "Unix",
     "Powershell",
     "Scripting",
-    "VBA",
     "Git",
-    "Socket",
+    "SocketIO",
     "Node.JS",
     "Typescript",
     "Firebase",
-    "Sass",
     "CSS",
     "HTML5",
     "JavaScript",
-    "Js",
     "React",
-    "Macros",
     "Algolia",
     "Jest",
     "Redis",
     "Linux",
-    "DHCP",
-    "DNS",
     "Arduino",
-    "PIC",
-    "ITSM Remedy",
     "Field Support",
     "Help Desk",
 ];
@@ -127,8 +116,6 @@ class Stream {
 
 function createStreams(p5) {
     // create p5.random streams from langs that span the width
-    console.log(p5.width);
-    console.log(p5.height);
     for (let i = 0; i < p5.height; i += charSize * 2) {
         streams.push(new Stream(p5.random(langs), i, p5));
     }
@@ -181,8 +168,6 @@ export function Matrix4({ width, height, className = '' }) {
                 load().then(p5 => {
                     window.p5 = p5
                     setp5instance(true)
-                    console.log(p5)
-
                 });
             }
             if (p5instance) {
@@ -193,7 +178,6 @@ export function Matrix4({ width, height, className = '' }) {
             }
 
             return () => {
-                console.log('removing out')
                 p5removal.current()
             }
         },

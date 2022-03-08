@@ -1,19 +1,35 @@
-import type { NextPage } from 'next'
-import Head from 'next/head'
-import Container from '../Components/Container'
-import Hero from '../Components/Hero'
-import MyWork from '../Components/MyWork'
-import Quote from '../Components/Quote'
-import Contact from '../Components/Contact'
-import { ScrollProvider } from '../Contexts/scrollContext'
+import type { NextPage } from "next";
+import Head from "next/head";
+import Container from "../Components/Container";
+import Hero from "../Components/Landing";
+
+import Quote from "../Components/Quote";
+import Contact from "../Components/Contact";
+import { ScrollProvider } from "../Contexts/scrollContext";
+import MyWork from "../Components/MyWork";
+import Profile from "../Components/Profile";
+import { useEffect } from "react";
+import Social from "../Components/Social";
 
 const Home: NextPage = () => {
-
-
+  useEffect(() => {
+    console.clear();
+    console.log(
+      "\n\n\n%cAjoy curious visitor!\n\nYou can see this project in:" +
+        "%c\nhttps://github.com/gabrieltaliano/Portfolio %c✨" +
+        "\n\n%cHave a nice day %c😊\n\n\n" +
+        "\n\n%cGabriel Taliano\n\n\n",
+      "background: #222; color: #b7e719",
+      "background: #222; color: #2ed1bb",
+      "background: #222; font-size: 1.2rem;",
+      "background: #222; color: #b7e719",
+      "background: #222; font-size: 1.2rem;",
+      "background: #222; color: #b7e719 ; font-weight: bold"
+    );
+  }, []);
 
   return (
-    <div className='h-screen overflow-auto w-full'>
-
+    <div className="h-screen overflow-auto w-full">
       <Head>
         <title>Gabriel Taliano</title>
         <meta name="description" content="FullStack Developer" />
@@ -26,13 +42,15 @@ const Home: NextPage = () => {
           <Hero />
           <Quote />
           <MyWork />
-          <Contact />
+          <Profile>
+            <Contact />
+            <Social />
+            <span className="text-teal-600 font-IBM-Plex-Mono leading-3 text-sm m-1 mb-0">Gabriel Taliano</span>
+          </Profile>
         </Container>
       </ScrollProvider>
     </div>
+  );
+};
 
-
-  )
-}
-
-export default Home
+export default Home;
