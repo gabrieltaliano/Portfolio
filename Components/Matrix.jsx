@@ -127,7 +127,7 @@ function reset(p5) {
 }
 
 
-export function Matrix4({ width, height, className = '' }) {
+export default function Matrix({ width, height, className = '' }) {
 
     const [p5instance, setp5instance] = useState(false)
 
