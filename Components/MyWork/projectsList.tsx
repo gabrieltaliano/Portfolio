@@ -2,8 +2,8 @@ import { work } from "./interfaces";
 import mw from "../../public/images/mitsushiowelding.jpg";
 import yb_pc from "../../public/images/yb-pc.jpg";
 import yb_mobile from "../../public/images/yb-mobile.jpg";
-import tb from "../../public/images/tb.png";
-import rk from "../../public/images/rk-b.png";
+import tb from "../../public/images/tb.jpg";
+import rk from "../../public/images/rk-b.jpg";
 import {
   algolia,
   bootstrap,
