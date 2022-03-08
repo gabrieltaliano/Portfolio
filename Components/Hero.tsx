@@ -32,7 +32,7 @@ export default function Hero({ offsetHeight = 0, scrollTop = 0 }) {
 
 
     return (
-        <div className='min-h-screen grow flex flex-nowrap flex-col overflow-hidden justify-center items-center relative bg-black snap-center'>
+        <div className='min-h-screen grow flex flex-nowrap flex-col overflow-hidden justify-center items-center relative bg-black snap-start'>
             <div className="w-full h-full flex flex-col justify-center items-center gap-0 ">
                 <div className='grow w-full bg-gradient-to-t from-white to-transparent z-20' />
                 <Matrix4 className='absolute z-10' width={width} height={height} />

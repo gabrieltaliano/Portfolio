@@ -18,7 +18,7 @@ export default function Quote() {
             <div className="absolute bottom-0 w-full h-1/2 bg-gradient-to-b from-black via-black to-[#05190b] z-0" />
 
             <ShowOnScroll
-                className="duration-700 flex grow flex-col justify-evenly z-10 gap-24 lg:gap-0 max-w-4xl p-8 min-h-screen"
+                className="duration-700 flex grow flex-col justify-evenly z-10 gap-24 lg:gap-0 max-w-4xl py-8 min-h-screen"
                 offset={500}
             >
                 <h2 className="text-green-400 text-3xl font-IBM-Plex-Mono font pt-2">Passionate about technology, electronics, IoT and web development <span className="text-green-800">(and photograpy)</span></h2>

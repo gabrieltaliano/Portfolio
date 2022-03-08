@@ -28,7 +28,7 @@ export default function Container({ children }: any) {
 
     return (
         <main
-            className='flex flex-col grow bg-gray-400 overflow-auto scroll-smooth snap-proximity snap-y'
+            className='h-full flex flex-col grow bg-gray-400 overflow-auto scroll-smooth snap-proximity snap-y'
             ref={containerRef} onScroll={handleScroll}
         >
             {children}

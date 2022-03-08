@@ -4,7 +4,7 @@ import Container from '../Components/Container'
 import Hero from '../Components/Hero'
 import MyWork from '../Components/MyWork'
 import Quote from '../Components/Quote'
-
+import Contact from '../Components/Contact'
 import { ScrollProvider } from '../Contexts/scrollContext'
 
 const Home: NextPage = () => {
@@ -12,7 +12,7 @@ const Home: NextPage = () => {
 
 
   return (
-    <div className='h-screen flex flex-col w-full'>
+    <div className='h-screen overflow-auto w-full'>
 
       <Head>
         <title>Gabriel Taliano</title>
@@ -26,6 +26,7 @@ const Home: NextPage = () => {
           <Hero />
           <Quote />
           <MyWork />
+          <Contact />
         </Container>
       </ScrollProvider>
     </div>
