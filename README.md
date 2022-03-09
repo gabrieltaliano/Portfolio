@@ -23,6 +23,15 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) in the browser.
 
+
+## env.local
+
+
+```
+NEXT_PUBLIC_GOOGLE_ANALYTICS=<your-google-analytics-id>
+DEBUG=TRUE
+```
+
 ## Stack:
 
 - Next.js

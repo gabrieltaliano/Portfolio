@@ -1,6 +1,7 @@
 import React, { useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
+import * as ga from "../lib/analitics";
 
 export default function Contact() {
 
@@ -9,8 +10,18 @@ export default function Contact() {
   const [result, setResult] = useState('')
   const form = useRef();
 
+  const sendEmailGA = (query) => {
+    ga.event({
+      action: "send email",
+      params: {
+        search_term: query
+      }
+    })
+  }
+
   const sendEmail = (e) => {
     e.preventDefault();
+    sendEmailGA(form.current)
     setDisabled(true)
     emailjs.sendForm('service_uu1i4xr', 'template_tcqbu84', form.current, 'm1D4NG-CkUupo6bdJ')
       .then(() => {

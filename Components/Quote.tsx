@@ -3,7 +3,7 @@ import ShowOnScroll from "./ShowOnScroll";
 import { useInView } from "react-intersection-observer";
 
 export default function Quote() {
-  const { ref, inView } = useInView({ triggerOnce: true });
+  const { ref, inView } = useInView({ triggerOnce: false });
 
   return (
     <div
@@ -21,27 +21,22 @@ export default function Quote() {
           <span className="text-green-800">(and photograpy)</span>
         </h2>
 
-        <ShowOnScroll className="duration-500 flex flex-col gap-8" offset={300}>
-          {/* <Positions /> */}
-          <ShowOnScroll
-            offset={-100}
-            className="duration-500 grow w-full z-20 flex relative "
+        <ShowOnScroll
+          offset={100}
+          className="duration-500 w-full z-20 flex relative "
+        >
+          <div
+            ref={ref}
+            className={`btn w-fit mx-auto delay-100 ${
+              inView ? "fadein" : "opacity-0"
+            }`}
           >
-            <div
-              className={`btn w-fit mx-auto mt-20 ${
-                inView ? "fadein delayed-900" : ""
-              }`}
-            >
-              <Link href="/#work">
-                <a
-                  ref={ref}
-                  className="font-IBM-Plex-Mono font-bold text-green-400 text-xl"
-                >
-                  View my work<span className="cursor">_</span>
-                </a>
-              </Link>
-            </div>
-          </ShowOnScroll>
+            <Link href="/#work">
+              <a className="font-IBM-Plex-Mono font-bold text-green-400 text-xl">
+                View my work<span className="cursor">_</span>
+              </a>
+            </Link>
+          </div>
         </ShowOnScroll>
       </ShowOnScroll>
     </div>

@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { images } from "./interfaces";
-
+import { event } from "../../lib/analitics";
 export default function Preview({
   img,
   url,
@@ -10,6 +10,15 @@ export default function Preview({
 }) {
   const { ref, inView } = useInView({ triggerOnce: true });
 
+  const handleClick = (url='') => {
+    event({
+      action: "visit project",
+      params: {
+        project_url: url,
+      },
+    });
+  };
+
   return (
     <a
       ref={ref}
@@ -17,6 +26,7 @@ export default function Preview({
       target="_blank"
       rel="noreferrer"
       className={`duration-500 ${inView ? "opacity-100" : "opacity-0"}`}
+      onClick={()=>{handleClick(url);}}
     >
       {img.length === 1 ? (
         <div

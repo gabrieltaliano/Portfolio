@@ -11,21 +11,27 @@ import Profile from "../Components/Profile";
 import { useEffect } from "react";
 import Social from "../Components/Social";
 
+const hello = () => {
+  if (!process.env.debug) {
+    console.clear();
+  }
+  console.log(
+    "\n\n\n%cAjoy curious visitor!\n\nYou can see this project in:" +
+      "%c\nhttps://github.com/gabrieltaliano/Portfolio %c✨" +
+      "\n\n%cHave a nice day %c😊\n\n\n" +
+      "\n\n%cGabriel Taliano\n\n\n",
+    "background: #222; color: #b7e719",
+    "background: #222; color: #2ed1bb",
+    "background: #222; font-size: 1.2rem;",
+    "background: #222; color: #b7e719",
+    "background: #222; font-size: 1.2rem;",
+    "background: #222; color: #b7e719 ; font-weight: bold"
+  );
+};
+
 const Home: NextPage = () => {
   useEffect(() => {
-    console.clear();
-    console.log(
-      "\n\n\n%cAjoy curious visitor!\n\nYou can see this project in:" +
-        "%c\nhttps://github.com/gabrieltaliano/Portfolio %c✨" +
-        "\n\n%cHave a nice day %c😊\n\n\n" +
-        "\n\n%cGabriel Taliano\n\n\n",
-      "background: #222; color: #b7e719",
-      "background: #222; color: #2ed1bb",
-      "background: #222; font-size: 1.2rem;",
-      "background: #222; color: #b7e719",
-      "background: #222; font-size: 1.2rem;",
-      "background: #222; color: #b7e719 ; font-weight: bold"
-    );
+    hello();
   }, []);
 
   return (
@@ -45,7 +51,9 @@ const Home: NextPage = () => {
           <Profile>
             <Contact />
             <Social />
-            <span className="text-teal-600 font-IBM-Plex-Mono leading-3 text-sm m-1 mb-0">Gabriel Taliano</span>
+            <span className="text-teal-600 font-IBM-Plex-Mono leading-3 text-sm m-1 mb-0">
+              Gabriel Taliano
+            </span>
           </Profile>
         </Container>
       </ScrollProvider>

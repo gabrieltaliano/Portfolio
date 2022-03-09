@@ -1,4 +1,4 @@
-import Project from "./Projects";
+import Project from "./Project";
 import projects from "./projectsList";
 
 export default function MyWork() {
