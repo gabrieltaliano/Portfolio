@@ -3,13 +3,18 @@ import type { AppProps } from "next/app";
 import Script from "next/script";
 import { useRouter } from "next/router";
 import { useEffect } from "react";
-import * as ga from "../lib/analitics";
+import { event } from "../lib/analitics";
 
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url='') => {
-      ga.pageview(url);
+    const handleRouteChange = (url = "") => {
+      event({
+        action: "CallToAction triggered",
+        params: {
+          hash: url,
+        },
+      });
     };
 
     router.events.on("hashChangeComplete", handleRouteChange);

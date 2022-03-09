@@ -1,7 +1,7 @@
-import React, { useRef } from 'react';
+import React, { useEffect, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 import { useState } from 'react';
-import * as ga from "../lib/analitics";
+import { event } from "../lib/analitics";
 
 export default function Contact() {
 
@@ -11,10 +11,10 @@ export default function Contact() {
   const form = useRef();
 
   const sendEmailGA = (query) => {
-    ga.event({
+    event({
       action: "send email",
       params: {
-        search_term: query
+        form: query
       }
     })
   }
@@ -34,6 +34,24 @@ export default function Contact() {
       });
   };
 
+  const handleFormView = (e) => {
+
+    e.preventDefault();
+
+    setOpen(x => {
+      event({
+        action: "contact form triggered",
+        params: {
+          form: x ? "closed" : "opened"
+        }
+      })
+      return !x
+    })
+
+
+
+  }
+
   return (
 
     <form
@@ -46,7 +64,7 @@ export default function Contact() {
       onSubmit={sendEmail}
     >
       {open ? <>
-        <button onClick={(e) => { e.preventDefault(); setOpen(x => !x) }} className='absolute z-50 right-4 top-2 rounded-full w-3 h-3 border-[1px] border-red-500 bg-red-600 ' />
+        <button onClick={handleFormView} className='absolute z-50 right-4 top-2 rounded-full w-3 h-3 border-[1px] border-red-500 bg-red-600 ' />
         <div className={`flex flex-col grow gap-4  ${open ? 'opacity-100 duration-200 ' : 'opacity-0'}`}>
           <div className='flex flex-col'>
             <label>Name</label>
