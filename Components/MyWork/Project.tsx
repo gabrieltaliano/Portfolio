@@ -9,8 +9,12 @@ export default function Project({ project }: { project: work; key: string }) {
       className="flex flex-col  items-center min-w-[80vw] sm:min-w-0 max-w-xl m-4"
       style={{ flexBasis: `${45}%` }}
     >
-      <Preview img={project.img} url={project.url} />
-      <Description text={project.description} project_name={project.name} />
+      <Preview
+        img={project.img}
+        url={project.url}
+        project_name={project.name}
+      />
+      <Description text={project.description} />
       <Stack stack={project.stack} project_name={project.name} />
     </div>
   );
