@@ -10,7 +10,7 @@ export default function Project({ project }: { project: work; key: string }) {
       style={{ flexBasis: `${45}%` }}
     >
       <Preview img={project.img} url={project.url} />
-      <Description text={project.description} />
+      <Description text={project.description} project_name={project.name} />
       <Stack stack={project.stack} project_name={project.name} />
     </div>
   );

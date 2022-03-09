@@ -72,13 +72,10 @@ class Char {
             this.p5.text(this.value, this.x, this.y);
         }        // fall down
         this.x = this.x > (this.p5.width) ? 0 : this.x + this.speed;
-        if (flick < 10) {
-            // this.y = p5.random(2)-1>0?this.y+1:this.y-1
-        }
     }
 }
 
-// -------------------------------------
+
 class Stream {
     constructor(text, x, p5) {
         this.size = Math.round(Math.random() * 12) + 14;
@@ -97,7 +94,6 @@ class Stream {
 
     draw() {
         this.p5.textSize(this.size)
-
         this.p5.fill(120, 100, 100);
         this.chars.forEach((c, i) => {
             // 30 percent chance of lit tail
@@ -139,7 +135,6 @@ export default function Matrix({ width, height, className = '' }) {
             const Sketch = (p5) => {
                 p5.setup = () => {
                     p5.createCanvas(width, height)
-                    // p5.background(255, 130, 20)
                     reset(p5);
                     p5.frameRate(20);
                     p5.colorMode(p5.HSB);
@@ -153,11 +148,10 @@ export default function Matrix({ width, height, className = '' }) {
                     p5.background(0, 0.4);
 
                     streams.forEach((s) => {
-                        // window.alert('s')
                         s.draw()
                     });
 
-                    // p5.background(count);
+
                 }
             }
             const load = async () => {
@@ -173,7 +167,6 @@ export default function Matrix({ width, height, className = '' }) {
             if (p5instance) {
 
                 let newP5 = new window.p5(Sketch, containerRef.current)
-                // newP5.start()
                 p5removal.current = newP5.remove
             }
 
@@ -181,7 +174,6 @@ export default function Matrix({ width, height, className = '' }) {
                 p5removal.current()
             }
         },
-        // This empty list tells React that this effect never needs to get re-rendered!
         [ p5instance, width, height]
     );
     return (

@@ -17,7 +17,7 @@ export default function Stack({
       className="text-green-500 flex w-full flex-wrap gap-x-2 justify-evenly lg:max-w-[30vw]"
     >
       {stack.map((t, i) => (
-        <div
+        <li
           key={project_name + t.name}
           className="hover:scale-110 flex flex-col items-center group text-center gap-1 duration-300"
           style={{
@@ -42,7 +42,7 @@ export default function Stack({
           <span className="opacity-0 group-hover:opacity-100 duration-300 text-sm text-white font-IBM-Plex-Mono center">
             {`${t.name}\n${t?.note || ""}`}
           </span>
-        </div>
+        </li>
       ))}
     </ul>
   );

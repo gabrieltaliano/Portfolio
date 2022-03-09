@@ -4,13 +4,15 @@ import { event } from "../../lib/analitics";
 export default function Preview({
   img,
   url,
+  project_name = "",
 }: {
   img: images[];
   url: string | undefined;
+  project_name: string;
 }) {
   const { ref, inView } = useInView({ triggerOnce: true });
 
-  const handleClick = (url='') => {
+  const handleClick = (url = "") => {
     event({
       action: "visit project",
       params: {
@@ -24,9 +26,12 @@ export default function Preview({
       ref={ref}
       href={url}
       target="_blank"
+      aria-label={project_name}
       rel="noreferrer"
       className={`duration-500 ${inView ? "opacity-100" : "opacity-0"}`}
-      onClick={()=>{handleClick(url);}}
+      onClick={() => {
+        handleClick(url);
+      }}
     >
       {img.length === 1 ? (
         <div
