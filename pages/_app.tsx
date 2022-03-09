@@ -8,7 +8,7 @@ import * as ga from "../lib/analitics";
 function MyApp({ Component, pageProps }: AppProps) {
   const router = useRouter();
   useEffect(() => {
-    const handleRouteChange = (url) => {
+    const handleRouteChange = (url='') => {
       ga.pageview(url);
     };
 
