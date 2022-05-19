@@ -55,10 +55,10 @@ export default function Contact() {
   return (
 
     <form
-      className={open ?
-        `w-full max-w-[50rem] font-IBM-Plex-Mono border-[1px] border-green-900 duration-500 text-green-500  shadow my-8 pb-4 bg-black/20 shadow-green-900 rounded-xl py-2 px-4 flex flex-col lg:flex-row gap-x-8 relative`
+      className={`border-[1px] border-green-900 duration-500 shadow-green-900 my-8 ${open ?
+        `w-full max-w-[50rem] font-IBM-Plex-Mono  text-green-500  shadow my-8 pb-4 bg-black/20 rounded-xl py-2 px-4 flex flex-col lg:flex-row gap-x-8 relative`
         :
-        `w-min h-10 rounded-full overflow-hidden border-[1px] border-green-900 duration-500 flex justify-center items-center px-2 py1 shadow-green-900 shadow hover:scale-105`}
+        `w-min h-10 rounded-full overflow-hidden  flex justify-center items-center px-2 shadow hover:scale-105`}`}
 
       ref={form}
       onSubmit={sendEmail}

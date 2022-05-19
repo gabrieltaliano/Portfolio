@@ -2,7 +2,7 @@ import ShowOnScroll from "../ShowOnScroll";
 import positions from "./positionList";
 export default function Positions() {
   return (
-    <div className="flex flex-wrap lg:flex-nowrap gap-y-8 gap-x-4 my-8 pb-8 mb-auto justify-center">
+    <div className="flex flex-wrap lg:flex-nowrap gap-y-8 gap-x-4 my-8 pb-8 mb-auto justify-center text-center lg:text-left">
       {positions.map((position, positionIndex) => (
         <ShowOnScroll
           className="duration-300 text-green-400 gap-x-2 group flex"

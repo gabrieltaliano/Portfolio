@@ -32,7 +32,7 @@ export default function Social() {
           target="_blank"
           rel="noreferrer"
           key={sl.name}
-          className="hover:scale-110 duration-200 h-8 w-8 relative m-1"
+          className="hover:scale-110 duration-200 h-7 w-7 relative m-1"
           onClick={() => {
             handleClick(sl.name);
           }}

@@ -1,7 +1,3 @@
 export default function Description({ text = "" }) {
-  return (
-    <div className="text-green-500">
-      <label>{text}</label>
-    </div>
-  );
+  return <label className="m-4 text-green-300 text-center text-sm whitespace-pre-wrap font-IBM-Plex-Mono leading-4">{text}</label>;
 }

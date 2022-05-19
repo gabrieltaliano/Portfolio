@@ -12,6 +12,5 @@ export interface work {
   description?: string;
   img: images[];
   stack: tech[];
-  title?: string;
   url?: string;
 }

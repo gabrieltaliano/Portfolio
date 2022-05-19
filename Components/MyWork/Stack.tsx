@@ -14,12 +14,12 @@ export default function Stack({
   return (
     <ul
       ref={ref}
-      className="text-green-500 flex w-full flex-wrap gap-x-2 justify-evenly lg:max-w-[30vw]"
+      className="text-green-500 flex w-full flex-wrap gap-2 justify-evenly lg:max-w-[30vw]"
     >
       {stack.map((t, i) => (
         <li
           key={project_name + t.name}
-          className="hover:scale-110 flex flex-col items-center group text-center gap-1 duration-300"
+          className="hover:scale-110 hover:z-[90000] flex flex-col items-center group text-center gap-1 duration-300"
           style={{
             flexBasis: `${100 / (stack.length - 1)}%`,
           }}
@@ -39,7 +39,7 @@ export default function Stack({
               objectFit="contain"
             />
           </div>
-          <span className="opacity-0 group-hover:opacity-100 duration-300 text-sm text-white font-IBM-Plex-Mono center">
+          <span className="opacity-0 text-[0px] group-hover:text-sm group-hover:opacity-100 group-hover:bg-neutral-800/60 absolute -bottom-5 duration-300 text-sm text-white font-IBM-Plex-Mono center">
             {`${t.name}\n${t?.note || ""}`}
           </span>
         </li>
