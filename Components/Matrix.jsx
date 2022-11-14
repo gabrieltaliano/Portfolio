@@ -1,52 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react'
 
-const langs = [
-    "ReactJs",
-    "React Native",
-    "Node",
-    "Css",
-    "Tailwinds",
-    "Firebase",
-    "Firestores",
-    "GCP",
-    "SysAdmin",
-    "Sqlite",
-    "IIS",
-    "SCCM",
-    "Esxi",
-    "Technical Aptitude",
-    "Jira",
-    "Redux",
-    "FCP",
-    "Photoshop",
-    "ITIL Service Management",
-    "Information Technology Service Management",
-    "Server Management",
-    "Storage Services",
-    "Windows Server",
-    "Vsphere",
-    "Virtualization",
-    "VMware",
-    "Unix",
-    "Powershell",
-    "Scripting",
-    "Git",
-    "SocketIO",
-    "Node.JS",
-    "Typescript",
-    "Firebase",
-    "CSS",
-    "HTML5",
-    "JavaScript",
-    "React",
-    "Algolia",
-    "Jest",
-    "Redis",
-    "Linux",
-    "Arduino",
-    "Field Support",
-    "Help Desk",
-];
+const stack = [ 'Algolia', 'Arduino', 'Chai', 'CSS', 'Css', 'Datadog', 'Esxi', 'Express', 'FCP', 'Field Support', 'Firebase', 'Firestore', 'GCP', 'Git', 'HTML5', 'Help Desk', 'IIS', 'ITIL Service Management', 'Information Technology Service Management', 'JavaScript', 'Jest', 'Jira', 'Linux', 'Material UI', 'Micro frontend', 'Mocha', 'Node', 'Node.JS', 'Photoshop', 'Powershell', 'React', 'React Native', 'React Test Library', 'ReactJs', 'Re charts','Redis', 'Redux', 'SCCM', 'Scripting', 'Server Management', 'SocketIO', 'Sqlite', 'Storage Services', 'Storybook', 'SysAdmin', 'Tailwinds', 'Technical Aptitude', 'Typescript', 'Unix', 'VMware', 'Virtualization', 'Vsphere', 'Windows Server' ];
 
 let charSize = 18;
 let streams;
@@ -113,7 +67,7 @@ class Stream {
 function createStreams(p5) {
     // create p5.random streams from langs that span the width
     for (let i = 0; i < p5.height; i += charSize * 2) {
-        streams.push(new Stream(p5.random(langs), i, p5));
+        streams.push(new Stream(p5.random(stack), i, p5));
     }
 }
 
