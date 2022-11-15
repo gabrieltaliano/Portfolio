@@ -17,7 +17,7 @@ export default function Profile({ children }: { children: ReactNode }) {
           inView ? "opacity-100" : "opacity-0"
         }`}
       >
-        <h2 className="text-green-400 text-3xl font-IBM-Plex-Mono mt-16 mb-8">
+        <h2 className="text-green-400 text-3xl font-IBM-Plex-Mono mt-24 mb-16">
           About me
         </h2>
         <h3 className="text-green-300 text-xl lg:max-w-3xl xl:max-w-5xl px-4 mb-8">
@@ -26,7 +26,7 @@ export default function Profile({ children }: { children: ReactNode }) {
           configuration of physical and virtual servers and PCs, incident and
           project management, service coordination and software development.
         </h3>
-        <h2 className="text-green-400 text-3xl font-IBM-Plex-Mono mt-16 mb-8">
+        <h2 className="text-green-400 text-3xl font-IBM-Plex-Mono mt-24 mb-12">
           Quick resume of my carrer:
         </h2>
         <Positions />

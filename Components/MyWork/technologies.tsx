@@ -21,7 +21,9 @@ import stripe_logo from "../../public/images/logos/stripe.svg";
 import redux_logo from "../../public/images/logos/redux.svg";
 import redis_logo from "../../public/images/logos/redis.svg";
 import svg_logo from "../../public/images/logos/svg-logo.svg";
+import javascript_logo from "../../public/images/logos/js.png";
 
+export const javascript: tech = { name: "Javascript", logo: javascript_logo };
 export const komoju: tech = { name: "Komoju", logo: komoju_logo };
 export const redux: tech = { name: "Redux", logo: redux_logo };
 export const redis: tech = { name: "Redis", logo: redis_logo };

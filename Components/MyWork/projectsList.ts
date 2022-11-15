@@ -4,6 +4,7 @@ import yb_pc from "../../public/images/yb-pc.jpg";
 import yb_mobile from "../../public/images/yb-mobile.jpg";
 import tb from "../../public/images/tb.jpg";
 import rk from "../../public/images/rk-b.jpg";
+import mediafly from "../../public/images/mediafly.jpg";
 import {
   algolia,
   bootstrap,
@@ -26,9 +27,27 @@ import {
   tailwind,
   typeScript,
   vercel,
+  javascript,
+
 } from "./technologies";
 
 const projects: work[] = [
+  {
+    name: "Mediafly",
+    url: "https://www.mediafly.com/",
+    img: [{ src: mediafly.src, orientation: "h" }],
+    description: `• API integration project in Javascript
+• Query modeling for Redis with utility functions
+• Angular to React migration (microfrontend)
+• Development of visualization modules in react`,
+    stack: [
+      javascript,
+      restApi,
+      redis,
+      redux,
+      react_tech
+    ],
+  },
   {
     name: "Ticket Bundle",
     url: "https://ticket-bundle.vercel.app/",

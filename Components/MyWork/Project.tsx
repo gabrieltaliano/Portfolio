@@ -7,8 +7,8 @@ import Title from "./Title";
 export default function Project({ project }: { project: work; key: string }) {
   return (
     <div
-      className="flex flex-col  items-center min-w-[80vw] sm:min-w-0 max-w-xl m-4"
-      style={{ flexBasis: `${45}%` }}
+      className={`flex flex-col items-center m-3 ${project.name=='Mediafly'?'min-w-full':'md:min-w-0 min-w-[80vw] max-w-xl'}`}
+      style={{ flexBasis: `${40}%` }}
     >
       <Title text={project.name} />
       <Description text={project.description} />
