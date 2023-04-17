@@ -31,10 +31,8 @@ export default function Quote() {
               inView ? "fadein" : "opacity-0"
             }`}
           >
-            <Link href="/#work">
-              <a className="font-IBM-Plex-Mono font-bold text-green-400 text-xl">
+            <Link href="/#work"className="font-IBM-Plex-Mono font-bold text-green-400 text-xl">
                 View my work<span className="cursor">_</span>
-              </a>
             </Link>
           </div>
         </ShowOnScroll>

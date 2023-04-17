@@ -38,8 +38,8 @@ const projects: work[] = [
     img: [{ src: mediafly.src, orientation: "h" }],
     description: `• API integration project in Javascript
 • Query modeling for Redis with utility functions
-• Angular to React migration (microfrontend)
-• Development of visualization modules in react`,
+• Angular to React migration (micro-frontend)
+• Development of visualization modules in react and recharts`,
     stack: [
       javascript,
       restApi,

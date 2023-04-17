@@ -37,7 +37,6 @@ export default function Social() {
             handleClick(sl.name);
           }}
         >
-          {/* <Image src={sl.img} alt={sl.name} height={35} width={35} /> */}
           <Image src={sl.img} alt={sl.name} layout="fill" objectFit="contain" />
         </a>
       ))}

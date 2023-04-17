@@ -1,6 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react'
-
-const stack = [ 'Algolia', 'Arduino', 'Chai', 'CSS', 'Css', 'Datadog', 'Esxi', 'Express', 'FCP', 'Field Support', 'Firebase', 'Firestore', 'GCP', 'Git', 'HTML5', 'Help Desk', 'IIS', 'ITIL Service Management', 'Information Technology Service Management', 'JavaScript', 'Jest', 'Jira', 'Linux', 'Material UI', 'Micro frontend', 'Mocha', 'Node', 'Node.JS', 'Photoshop', 'Powershell', 'React', 'React Native', 'React Test Library', 'ReactJs', 'Re charts','Redis', 'Redux', 'SCCM', 'Scripting', 'Server Management', 'SocketIO', 'Sqlite', 'Storage Services', 'Storybook', 'SysAdmin', 'Tailwinds', 'Technical Aptitude', 'Typescript', 'Unix', 'VMware', 'Virtualization', 'Vsphere', 'Windows Server' ];
+import stack from '../stack';
 
 let charSize = 18;
 let streams;

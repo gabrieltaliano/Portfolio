@@ -73,10 +73,8 @@ export default function Landing() {
           className="duration-500 grow w-full z-20 flex relative bg-gradient-to-b from-white to-transparent"
         >
           <div className="btn w-fit mx-auto mt-20 fadein delayed-2500">
-            <Link href="/#quote">
-              <a className="font-IBM-Plex-Mono font-bold  text-white text-xl">
+            <Link href="/#quote" className="font-IBM-Plex-Mono font-bold  text-white text-xl">
                 View more about me<span className="cursor">_</span>
-              </a>
             </Link>
           </div>
         </ShowOnScroll>
