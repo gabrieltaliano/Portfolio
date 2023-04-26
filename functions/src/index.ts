@@ -1,23 +1,21 @@
 import * as functions from "firebase-functions";
-import {initializeApp} from "firebase-admin";
+import * as admin from "firebase-admin";
+admin.initializeApp();
 
-initializeApp();
-
-export const helloWorld = functions.https.onRequest((request, response) => {
-  functions.logger.info("Hello logs!", {structuredData: true});
-  response.send("Hello from Firebase!");
-  functions.firestore.document("stack/").onWrite(() => {
+export const revalidate = functions.https.onRequest((request, response) => {
+  functions.firestore.document("stack/").onWrite(async (doc) => {
+    console.log(JSON.stringify(doc));
     const _params = {
       secret: functions.config().vercel.key,
     };
 
-    fetch("https://<your-site.com>/api/revalidate", {
+    return await fetch("https://gabrieltaliano.dev/api/revalidate", {
       method: "POST",
       body: JSON.stringify(_params),
       headers: {"Content-type": "application/json; charset=UTF-8"},
     })
       .then((response) => response.json())
-      .then((json) => console.log(json))
+      .then((json) => response.send(json))
       .catch((error) => response.send(error));
   });
 });

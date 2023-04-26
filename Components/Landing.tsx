@@ -9,7 +9,7 @@ import dynamic from "next/dynamic";
 
 const Matrix = dynamic(() => import("./Matrix"));
 
-export default function Landing({stack}) {
+export default function Landing({ stack }: { stack: any }) {
   const [width, setWidth] = useState(0);
   const [height, setHeight] = useState(0);
 
@@ -36,7 +36,12 @@ export default function Landing({stack}) {
     <div className="min-h-screen grow flex flex-nowrap flex-col overflow-hidden justify-center items-center relative bg-black">
       <div className="w-full h-full flex flex-col justify-center items-center gap-0 ">
         <div className="grow w-full bg-gradient-to-t from-white to-transparent z-20" />
-        <Matrix className="absolute z-10" width={width} height={height} stack={stack} />
+        <Matrix
+          className="absolute z-10"
+          width={width}
+          height={height}
+          stack={stack}
+        />
         <ShowOnScroll
           offset={-100}
           mode="fadeOut"
@@ -74,8 +79,11 @@ export default function Landing({stack}) {
           className="duration-500 grow w-full z-20 flex relative bg-gradient-to-b from-white to-transparent"
         >
           <div className="btn w-fit mx-auto mt-20 fadein delayed-2500">
-            <Link href="/#quote" className="font-IBM-Plex-Mono font-bold  text-white text-xl">
-                View more about me<span className="cursor">_</span>
+            <Link
+              href="/#quote"
+              className="font-IBM-Plex-Mono font-bold  text-white text-xl"
+            >
+              View more about me<span className="cursor">_</span>
             </Link>
           </div>
         </ShowOnScroll>

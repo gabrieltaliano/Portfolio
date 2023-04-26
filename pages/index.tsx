@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import Social from "../Components/Social";
 import { db } from "../lib/firebase";
 import { query, getDocs, collection, DocumentData } from "firebase/firestore";
-import { json } from "stream/consumers";
 
 const hello = () => {
   if (!process.env.debug) {
@@ -32,7 +31,7 @@ const hello = () => {
   );
 };
 
-const Home: NextPage = ({ time, stack }) => {
+const Home: NextPage = ({ time, stack }: any) => {
   useEffect(() => {
     hello();
     console.log({ time });
