@@ -35,7 +35,8 @@ const Home: NextPage = ({ time, stack }: any) => {
   useEffect(() => {
     hello();
     console.log({ time });
-  }, [time]);
+    console.log({ stack });
+  }, [time, stack]);
 
   return (
     <div className="h-screen overflow-auto w-full">
@@ -66,7 +67,6 @@ const Home: NextPage = ({ time, stack }: any) => {
 
 export default Home;
 
-export const revalidate = 10;
 export async function getStaticProps() {
   const time = new Date();
 

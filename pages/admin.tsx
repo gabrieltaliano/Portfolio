@@ -6,6 +6,7 @@ import {
   signOut,
   onAuthStateChanged,
 } from "firebase/auth";
+import StackEditor from "../Components/StackEditor";
 
 export default function Admin() {
   const [user, setUser] = useState("none");
@@ -54,6 +55,7 @@ export default function Admin() {
       ) : (
         <>
           <button onClick={signOutUser}>Sign Out</button>
+          <StackEditor />
         </>
       )}
     </div>
