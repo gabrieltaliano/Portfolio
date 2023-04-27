@@ -12,6 +12,7 @@ import { useEffect } from "react";
 import Social from "../Components/Social";
 import { db } from "../lib/firebase";
 import { query, getDocs, collection, DocumentData } from "firebase/firestore";
+import previewImage from "../public/images/GabrielTaliano.jpg";
 
 const hello = () => {
   if (!process.env.debug) {
@@ -31,18 +32,21 @@ const hello = () => {
   );
 };
 
-const Home: NextPage = ({ time, stack }: any) => {
+const Home: NextPage = ({ stack }: any) => {
   useEffect(() => {
     hello();
-    console.log({ time });
-    console.log({ stack });
-  }, [time, stack]);
-
+  }, []);
+  const websiteUrl = "http://localhost:3000/";
   return (
     <div className="h-screen overflow-auto w-full">
       <Head>
         <title>Gabriel Taliano</title>
         <meta name="description" content="FullStack Developer" />
+        <meta
+          property="og:image"
+          content="https://firebasestorage.googleapis.com/v0/b/gabrieltaliano-dev.appspot.com/o/GabrielTaliano.jpg?alt=media&token=8472e5c1-4fae-41ff-ad1e-c893f72cfb27"
+          key="ogimage"
+        />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
