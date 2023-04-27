@@ -12,7 +12,6 @@ import { useEffect } from "react";
 import Social from "../Components/Social";
 import { db } from "../lib/firebase";
 import { query, getDocs, collection, DocumentData } from "firebase/firestore";
-import previewImage from "../public/images/GabrielTaliano.jpg";
 
 const hello = () => {
   if (!process.env.debug) {
