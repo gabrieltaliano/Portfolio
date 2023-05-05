@@ -13,7 +13,7 @@ export default function Profile({ children }: { children: ReactNode }) {
     >
       <div
         ref={ref}
-        className={`min-h-screen grow flex flex-nowrap flex-col items-center p-4 delay-200 duration-700 ${
+        className={`min-h-screen grow flex flex-nowrap overflow-hidden flex-col items-center p-4 delay-200 duration-700 ${
           inView ? "opacity-100" : "opacity-0"
         }`}
       >
