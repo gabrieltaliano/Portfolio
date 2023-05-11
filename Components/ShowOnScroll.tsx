@@ -37,7 +37,7 @@ export default function ShowOnScroll({
   }
 
   return (
-    <div ref={inputRef} className={`${effect} ${className}`} style={style}>
+    <div ref={inputRef} className={`${effect} ${className} px-4`} style={style}>
       {children}
     </div>
   );

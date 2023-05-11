@@ -1,3 +1,4 @@
+import AnimatedCorners from "../AnimatedCorners";
 import Description from "./Description";
 import { work } from "./interfaces";
 import Preview from "./Preview";
@@ -6,18 +7,26 @@ import Title from "./Title";
 
 export default function Project({ project }: { project: work; key: string }) {
   return (
-    <div
-      className={`flex flex-col items-center m-3 ${project.name=='Mediafly'?'min-w-full':'md:min-w-0 min-w-[80vw] max-w-xl'}`}
-      style={{ flexBasis: `${40}%` }}
+    <AnimatedCorners
+      className={`bg-green-800/5 ${
+        project.name == "Mediafly"
+          ? "mx-[25%] px-[10vw]"
+          : "md:min-w-0 min-w-[80vw] max-w-xl"
+      }`}
     >
-      <Title text={project.name} />
-      <Description text={project.description} />
-      <Preview
-        img={project.img}
-        url={project.url}
-        project_name={project.name}
-      />
-      <Stack stack={project.stack} project_name={project.name} />
-    </div>
+      <div
+        className="flex flex-col items-center m-3 md:min-w-0 min-w-[80vw] max-w-xl"
+        style={{ flexBasis: `${40}%` }}
+      >
+        <Title text={project.name} />
+        <Description text={project.description} />
+        <Preview
+          img={project.img}
+          url={project.url}
+          project_name={project.name}
+        />
+        <Stack stack={project.stack} project_name={project.name} />
+      </div>
+    </AnimatedCorners>
   );
 }

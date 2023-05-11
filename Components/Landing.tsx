@@ -6,6 +6,7 @@ import Link from "next/link";
 import ShowOnScroll from "./ShowOnScroll";
 import SizedText from "./SizedText";
 import dynamic from "next/dynamic";
+import AnimatedCorners from "./AnimatedCorners";
 
 const Matrix = dynamic(() => import("./Matrix"));
 
@@ -34,7 +35,7 @@ export default function Landing({ stack }: { stack: any }) {
 
   return (
     <div className="min-h-screen grow flex flex-nowrap flex-col overflow-hidden justify-center items-center relative bg-black">
-      <div className="w-full h-full flex flex-col justify-center items-center gap-0 ">
+      <div className="w-full h-full flex flex-col justify-center items-center gap-0">
         <div className="grow w-full bg-gradient-to-t from-white to-transparent z-20" />
         <Matrix
           className="absolute z-10"
@@ -78,14 +79,14 @@ export default function Landing({ stack }: { stack: any }) {
           mode="fadeOut"
           className="duration-500 grow w-full z-20 flex relative bg-gradient-to-b from-white to-transparent"
         >
-          <div className="btn w-fit mx-auto mt-20 fadein delayed-2500">
+          <AnimatedCorners className="w-fit mx-auto mt-20">
             <Link
               href="/#quote"
-              className="font-IBM-Plex-Mono font-bold  text-white text-xl"
+              className="font-IBM-Plex-Mono font-bold text-white text-xl"
             >
               View more about me<span className="cursor">_</span>
             </Link>
-          </div>
+          </AnimatedCorners>
         </ShowOnScroll>
       </div>
     </div>

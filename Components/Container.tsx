@@ -1,11 +1,6 @@
 import { useEffect, useRef, ReactNode } from 'react'
 import useScroll from '../Hooks/useScroll';
 
-interface MyProps {
-    children?: ReactNode;
-}
-
-
 export default function Container({ children }: any) {
 
 

@@ -9,13 +9,13 @@ import {
 import StackEditor from "../Components/StackEditor";
 
 export default function Admin() {
-  const [user, setUser] = useState("none");
+  const [user, setUser] = useState<string | undefined>("none");
 
   const googleProvider = new GoogleAuthProvider();
   const googleSignIn = async () => {
     await signInWithPopup(auth, googleProvider)
       .then((user) => {
-        console.log(user);
+        console.log("Login success");
       })
       .catch((error) => {
         console.error(error);
@@ -38,7 +38,7 @@ export default function Admin() {
         const uid = user.uid;
         setUser(uid);
       } else {
-        setUser("");
+        setUser(undefined);
       }
     });
 

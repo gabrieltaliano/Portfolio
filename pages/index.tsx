@@ -1,17 +1,18 @@
+import { useEffect } from "react";
 import type { NextPage } from "next";
+import { ScrollProvider } from "../Contexts/scrollContext";
+import { db } from "../lib/firebase";
+import { query, getDocs, collection, DocumentData } from "firebase/firestore";
+
 import Head from "next/head";
 import Container from "../Components/Container";
 import Landing from "../Components/Landing";
-
 import Quote from "../Components/Quote";
 import Contact from "../Components/Contact";
-import { ScrollProvider } from "../Contexts/scrollContext";
 import MyWork from "../Components/MyWork";
 import Profile from "../Components/Profile";
-import { useEffect } from "react";
 import Social from "../Components/Social";
-import { db } from "../lib/firebase";
-import { query, getDocs, collection, DocumentData } from "firebase/firestore";
+import Positions from "../Components/Positions";
 
 const hello = () => {
   if (!process.env.debug) {
@@ -35,7 +36,7 @@ const Home: NextPage = ({ stack }: any) => {
   useEffect(() => {
     hello();
   }, []);
-  const websiteUrl = "http://localhost:3000/";
+
   return (
     <div className="h-screen overflow-auto w-full">
       <Head>
@@ -49,18 +50,15 @@ const Home: NextPage = ({ stack }: any) => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      {/* <span className='absolute top-0 left-0 bg-black text-green-400 text-sm whitespace-pre z-50 border-[1px] border-slate-500'>{JSON.stringify({ containerData }, null, 2)}</span> */}
       <ScrollProvider>
         <Container>
           <Landing stack={stack} />
           <Quote />
           <MyWork />
           <Profile>
+            <Positions />
             <Contact />
             <Social />
-            <span className="text-teal-600 font-IBM-Plex-Mono leading-3 text-sm m-1 mb-0">
-              Gabriel Taliano
-            </span>
           </Profile>
         </Container>
       </ScrollProvider>
@@ -91,6 +89,6 @@ export async function getStaticProps() {
     props: {
       stack: await getStack(),
       time: time.getMilliseconds(),
-    }, // will be passed to the page component as props
+    },
   };
 }

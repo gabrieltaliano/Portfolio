@@ -1,6 +1,6 @@
 import { useInView } from "react-intersection-observer";
 import { images } from "./interfaces";
-import { event } from "../../lib/analitics";
+import { event } from "../../lib/analytics";
 export default function Preview({
   img,
   url,

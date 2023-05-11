@@ -26,10 +26,6 @@ export default function Profile({ children }: { children: ReactNode }) {
           configuration of physical and virtual servers and PCs, incident and
           project management, service coordination and software development.
         </h3>
-        <h2 className="text-green-400 text-3xl font-IBM-Plex-Mono mt-24 mb-12">
-          Quick resume of my carrer:
-        </h2>
-        <Positions />
 
         {children}
       </div>
