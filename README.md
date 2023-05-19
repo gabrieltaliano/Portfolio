@@ -1,3 +1,5 @@
+[![Node.js CI](https://github.com/gabrieltaliano/Portfolio/actions/workflows/node.js.yml/badge.svg?branch=main)](https://github.com/gabrieltaliano/Portfolio/actions/workflows/node.js.yml)
+
 ## Welcome!
 
 This repository is my personal portfolio ✨
