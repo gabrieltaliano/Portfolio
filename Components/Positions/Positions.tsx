@@ -8,7 +8,7 @@ export default function Positions() {
         offset={-800}
       >
         <h2 className="text-green-400 text-3xl font-IBM-Plex-Mono mt-24 mb-12">
-          Quick resume of my carrer:
+          Quick resume of my career:
         </h2>
       </ShowOnScroll>
 
