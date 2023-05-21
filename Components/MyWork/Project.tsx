@@ -6,13 +6,12 @@ import Stack from "./Stack";
 import Title from "./Title";
 
 export default function Project({ project }: { project: work; key: string }) {
-  return (
-    <AnimatedCorners
-      className={`bg-green-800/5 ${
-        project.name == "Mediafly"
+  const size=project.name == "Mediafly"
           ? "mx-[25%] px-[10vw]"
           : "md:min-w-0 min-w-[80vw] max-w-xl"
-      }`}
+    return (
+    <AnimatedCorners
+      className={`bg-green-800/5 ${size}`}
     >
       <div
         className="flex flex-col items-center m-3 md:min-w-0 min-w-[80vw] max-w-xl"

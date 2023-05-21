@@ -12,7 +12,7 @@ export default function MyWork() {
           Works and projects<span className="cursor">_</span>
         </h2>
 
-        <div className="flex flex-wrap justify-evenly items-center gap-16 w-full lg:px-16">
+        <div className="flex flex-wrap justify-evenly items-stretch gap-16 w-full lg:px-16">
           {projects.map((project) => (
             <Project key={project.name} project={project} />
           ))}

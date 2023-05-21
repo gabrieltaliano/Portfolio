@@ -79,7 +79,7 @@ export default function Landing({ stack }: { stack: any }) {
           mode="fadeOut"
           className="duration-500 grow w-full z-20 flex relative bg-gradient-to-b from-white to-transparent"
         >
-          <AnimatedCorners className="w-fit mx-auto mt-20">
+          <AnimatedCorners className="w-fit mx-auto mt-20 h-fit">
             <Link
               href="/#quote"
               className="font-IBM-Plex-Mono font-bold text-white text-xl"

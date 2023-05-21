@@ -126,8 +126,6 @@ a {
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#ffffff",endColorstr="#ffffff",GradientType=1);
 }
 .corner-container {
-  width: fit-content;
-  height: fit-content;
   position: relative;
   --borderWidth: 1px;
   --cornerSize: 0.6rem;

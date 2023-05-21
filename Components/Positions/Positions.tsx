@@ -12,7 +12,7 @@ export default function Positions() {
         </h2>
       </ShowOnScroll>
 
-      <div className="flex flex-wrap lg:flex-nowrap gap-y-8 gap-x-4 my-8 pb-8 items-center justify-center text-center lg:text-left">
+      <div className="flex flex-wrap lg:flex-nowrap gap-y-8 gap-x-4 my-8 pb-8 justify-center text-center lg:text-left">
         {positions.map((position, positionIndex) => (
           <ShowOnScroll
             className="duration-300 text-green-400 gap-x-2 group flex"
