@@ -4,6 +4,9 @@ const nextConfig = {
   i18n: {
     locales: ["en"],
     defaultLocale: "en",
-  }
-}
-module.exports =nextConfig;
+  },
+  images: {
+    unoptimized: true,
+  },
+};
+module.exports = nextConfig;

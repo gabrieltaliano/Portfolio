@@ -33,7 +33,7 @@ export default function Admin() {
   };
 
   useEffect(() => {
-    const unsubscribe = onAuthStateChanged(auth, (user) => {
+    return onAuthStateChanged(auth, (user) => {
       if (user) {
         const uid = user.uid;
         setUser(uid);
@@ -41,23 +41,25 @@ export default function Admin() {
         setUser(undefined);
       }
     });
-
-    return () => unsubscribe();
   }, []);
+
+  const SignOut = () => (
+    <>
+      <button onClick={signOutUser}>Sign Out</button>
+      <StackEditor />
+    </>
+  );
+
+  const SignIn = () => (
+    <>
+      <div>Admin access required</div>
+      <button onClick={googleSignIn}>SIGN IN</button>
+    </>
+  );
 
   return (
     <div className="w-screen flex flex-col justify-center items-center text-green-300">
-      {!user ? (
-        <>
-          <div>Admin access required</div>
-          <button onClick={googleSignIn}>SIGN IN</button>
-        </>
-      ) : (
-        <>
-          <button onClick={signOutUser}>Sign Out</button>
-          <StackEditor />
-        </>
-      )}
+      {user ? <SignOut /> : <SignIn />}
     </div>
   );
 }

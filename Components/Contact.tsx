@@ -7,6 +7,7 @@ import React, {
 import emailjs from "@emailjs/browser";
 import { useState } from "react";
 import { event } from "../lib/analytics";
+import AnimatedCorners from "./AnimatedCorners";
 
 export default function Contact() {
   const [open, setOpen] = useState(false);
@@ -49,6 +50,7 @@ export default function Contact() {
 
   const handleFormView: MouseEventHandler = (e) => {
     e.preventDefault();
+    e.stopPropagation();
 
     setOpen((x) => {
       event({
@@ -57,19 +59,24 @@ export default function Contact() {
           form: x ? "closed" : "opened",
         },
       });
-      return !x;
+      return false;
     });
   };
 
   return (
-    <section className="min-h-[20vh] flex items-center flex-col justify-center w-full">
+    <section
+      className={`min-h-[20vh] flex items-center flex-col justify-center w-full`}
+    >
       <form
         className={`border-[1px] border-green-900 duration-200 shadow shadow-green-900 my-8 px-4 py-2 overflow-hidden relative rounded-xl ${
           open
             ? `w-full max-w-[50rem] font-IBM-Plex-Mono text-green-500 my-8 pb-4 bg-black/20 rounded-xl py-2 px-4 flex flex-col lg:flex-row gap-x-8`
-            : `w-min overflow-hidden flex justify-center items-center px-2shadow hover:scale-105`
+            : `w-min overflow-hidden flex justify-center items-center px-2shadow hover:scale-105 cursor-pointer`
         }`}
         ref={form}
+        onClick={() => {
+          setOpen(true);
+        }}
         onSubmit={sendEmail}
       >
         {open ? (
@@ -124,16 +131,18 @@ export default function Contact() {
               />
               <div className="flex">
                 <div
-                  className={`btn w-fit shadow-lg my-4 mb-2 ${
+                  className={`btn w-full shadow-lg my-4 mb-2 ${
                     disabled ? "shadow-gray-900" : "shadow-green-900"
                   }`}
                 >
-                  <input
-                    type="submit"
-                    disabled={disabled}
-                    value="Send message"
-                    className="font-IBM-Plex-Mono font-bold  text-green-200 disabled:text-gray-600 text-xl bg-black"
-                  />
+                  <AnimatedCorners>
+                    <input
+                      type="submit"
+                      disabled={disabled}
+                      value="Send message"
+                      className="font-IBM-Plex-Mono font-bold  text-green-200 disabled:text-gray-600 text-xl bg-black"
+                    />
+                  </AnimatedCorners>
                 </div>
                 <label className="text-sm text-white w-full text-center">
                   {result}
@@ -142,12 +151,7 @@ export default function Contact() {
             </div>
           </>
         ) : (
-          <span
-            onClick={() => setOpen(true)}
-            className="text-green-500 whitespace-nowrap"
-          >
-            Contact me
-          </span>
+          <span className="text-green-500 whitespace-nowrap">Contact me</span>
         )}
       </form>
     </section>

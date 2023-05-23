@@ -10,9 +10,10 @@ import Landing from "../Components/Landing";
 import Quote from "../Components/Quote";
 import Contact from "../Components/Contact";
 import MyWork from "../Components/MyWork";
-import Profile from "../Components/Profile";
 import Social from "../Components/Social";
 import Positions from "../Components/Positions";
+import ObservableContainer from "../Components/ObservableContainer";
+import AboutMe from "../Components/AboutMe";
 
 const hello = () => {
   if (!process.env.debug) {
@@ -55,11 +56,14 @@ const Home: NextPage = ({ stack }: any) => {
           <Landing stack={stack} />
           <Quote />
           <MyWork />
-          <Profile>
+          <ObservableContainer
+            className="bg-gradient-to-b from-slate-900  via-[#00040e] to-[#030e0d]"
+          >
+            <AboutMe />
             <Positions />
             <Contact />
             <Social />
-          </Profile>
+          </ObservableContainer>
         </Container>
       </ScrollProvider>
     </div>

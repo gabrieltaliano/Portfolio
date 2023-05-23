@@ -146,7 +146,7 @@ a {
   width: var(--cornerSize);
   height: var(--cornerSize);
   position: absolute;
-  z-index: auto;
+  z-index: -1;
   border-color: white;
   border-style: solid;
   border-width: var(--borderWidth);

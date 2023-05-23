@@ -41,8 +41,8 @@ export default function Social() {
             <Image
               src={sl.img}
               alt={sl.name}
-              layout="fill"
-              objectFit="contain"
+              fill
+              style={{ objectFit: "contain" }}
             />
           </a>
         ))}

@@ -1,0 +1,20 @@
+import React from "react";
+
+export default function AboutMe() {
+  return (
+    <>
+      <h2
+        id="about-me"
+        className="text-green-400 text-3xl font-IBM-Plex-Mono mt-20 mb-16"
+      >
+        About me
+      </h2>
+      <h3 className="text-green-300 text-xl lg:max-w-3xl xl:max-w-5xl px-4 mb-8">
+        Specialist with more of 10 years of experience in the IT field, help
+        desk, field support, virtualization, maintenance, diagnosis and
+        configuration of physical and virtual servers and PCs, incident and
+        project management, service coordination and software development.
+      </h3>
+    </>
+  );
+}

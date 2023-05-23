@@ -79,14 +79,14 @@ export default function Landing({ stack }: { stack: any }) {
           mode="fadeOut"
           className="duration-500 grow w-full z-20 flex relative bg-gradient-to-b from-white to-transparent"
         >
-          <AnimatedCorners className="w-fit mx-auto mt-20 h-fit">
-            <Link
-              href="/#quote"
-              className="font-IBM-Plex-Mono font-bold text-white text-xl"
-            >
+          <Link
+            href="/#quote"
+            className="font-IBM-Plex-Mono font-bold text-white text-xl w-fit mx-auto mt-20 h-fit"
+          >
+            <AnimatedCorners className="">
               View more about me<span className="cursor">_</span>
-            </Link>
-          </AnimatedCorners>
+            </AnimatedCorners>
+          </Link>
         </ShowOnScroll>
       </div>
     </div>
