@@ -52,9 +52,9 @@ class Stream {
     this.p5.textSize(this.size);
     this.p5.fill(120, 100, 100);
     this.chars.forEach((c, i) => {
-      // 30 percent chance of lit tail
+      // 50 percent chance of lit tail
       const lit = this.p5.random(100);
-      if (lit < 30) {
+      if (lit < 50) {
         if (i === this.chars.length - 1) {
           this.p5.fill(120, 30, 100);
         } else {
@@ -124,5 +124,6 @@ export default function Matrix({ width, height, className = "", stack = [] }) {
       p5removal.current();
     };
   }, [p5instance, width, height, stack]);
+
   return <div className={className} ref={containerRef}></div>;
 }
