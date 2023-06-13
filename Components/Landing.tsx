@@ -9,6 +9,24 @@ import dynamic from "next/dynamic";
 import AnimatedCorners from "./AnimatedCorners";
 
 const Matrix = dynamic(() => import("./Matrix"));
+function useOnlineStatus() {
+  const [isOnline, setIsOnline] = useState(true);
+  useEffect(() => {
+    function handleOnline() {
+      setIsOnline(true);
+    }
+    function handleOffline() {
+      setIsOnline(false);
+    }
+    window.addEventListener("online", handleOnline);
+    window.addEventListener("offline", handleOffline);
+    return () => {
+      window.removeEventListener("online", handleOnline);
+      window.removeEventListener("offline", handleOffline);
+    };
+  }, []);
+  return isOnline;
+}
 
 export default function Landing({ stack }: { stack: any }) {
   const [width, setWidth] = useState(0);
@@ -32,7 +50,7 @@ export default function Landing({ stack }: { stack: any }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-
+  const isOnlineeee = useOnlineStatus();
   return (
     <div className="min-h-screen grow flex flex-nowrap flex-col overflow-hidden justify-center items-center relative bg-black">
       <div className="w-full h-full flex flex-col justify-center items-center gap-0">
@@ -50,7 +68,7 @@ export default function Landing({ stack }: { stack: any }) {
         >
           <SizedText
             className="text-black mx-auto font-alfa-slab uppercase fadein pt-2"
-            text="Gabriel Taliano"
+            text={`Gabriel Taliano (${isOnlineeee ? "online" : "offline"})`}
           />
         </ShowOnScroll>
         <ShowOnScroll

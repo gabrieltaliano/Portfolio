@@ -70,13 +70,13 @@ const projects: work[] = [
     description: `• Web application development to authorize and manage access roles.
     • Internal Web application development to authorize and manage access roles with React, Firebase Functions (node.js) and Firebase Auth.
     • Corporate portal renewal in next.js`,
-    url: "https://mitsushio-welding.com/",
+    // url: "https://mitsushio-welding.com/",
     img: [{ src: mw.src, orientation: "h" }],
     stack: [bootstrap, emailJS, firebaseFirestore, firebaseAuth, react_tech],
   },
   {
-    name: "YB Langueges",
-    url: "https://yblanguages.com/",
+      name: "YB Languages",
+      url: "https://delfo-yb.web.app/",
     description: `• Website developed in Next.js with focus in internationalization with i18n
 • Komoju/Stripe payment gateway with Node backend
 • Dashboard to manage shared files and assign roles to users
