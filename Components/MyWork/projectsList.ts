@@ -50,7 +50,7 @@ const projects: work[] = [
   },
   {
     name: "Ticket Bundle",
-    url: "https://ticket-bundle.vercel.app/",
+    // url: "https://ticket-bundle.vercel.app/",
     img: [{ src: tb.src, orientation: "v" }],
     description: `• Web application for creating and monitoring ticket packages for promotions, discounts and/or event tickets.
     • Rest API for status queries
