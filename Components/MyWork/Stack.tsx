@@ -14,7 +14,7 @@ export default function Stack({
   return (
     <ul
       ref={ref}
-      className="text-green-500 flex w-full flex-wrap justify-evenly gap-2"
+      className="text-green-500 flex w-full flex-wrap justify-evenly gap-2 mb-6"
     >
       {stack.map((t, i) => (
         <li

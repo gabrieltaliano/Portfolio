@@ -14,7 +14,7 @@ export default function Project({ project }: { project: work; key: string }) {
       className={`bg-green-800/5 ${size}`}
     >
       <div
-        className="flex flex-col items-center m-3 md:min-w-0 min-w-[80vw] max-w-xl"
+        className="flex flex-col items-center m-3 md:min-w-0 min-w-[80vw] max-w-xl h-full justify-between"
         style={{ flexBasis: `${40}%` }}
       >
         <Title text={project.name} />

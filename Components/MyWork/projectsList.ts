@@ -53,7 +53,7 @@ const projects: work[] = [
         name: "Perfect Pixel",
         url: "https://perfect-pixel-gabrieltaliano.vercel.app/",
         img: [{ src: pixelPerfect.src, orientation: "h" }],
-        description: `Small site to see different css units in action (in progress)`,
+        description: `Small site to see different CSS units in action and take note of the most common layout scenarios (in progress)`,
         stack: [
             tailwind,
             vercel,
@@ -105,7 +105,6 @@ const projects: work[] = [
             firebaseAuth,
             { ...reactNative, note: "(in progress)" },
             redux,
-            { ...redis, note: "(migrating)" },
             postcss,
         ],
     },

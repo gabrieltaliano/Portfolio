@@ -64,7 +64,11 @@ const positions: positions[] = [
       "Express",
       "GIT",
       "Google Cloud Platform",
+      "AWS",
+      "PostgreSQL",
       "Firebase",
+      "Elastic Search",
+      "Docker",
     ],
   },
 ];
