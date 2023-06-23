@@ -69,6 +69,7 @@ const positions: positions[] = [
       "Firebase",
       "Elastic Search",
       "Docker",
+      "CI/CD"
     ],
   },
 ];
