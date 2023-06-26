@@ -29,7 +29,7 @@ export default function Quote() {
           <div
             ref={ref}
             className={`w-fit mx-auto delay-100 ${
-              inView ? "fadein" : "opacity-0"
+              inView ? "fadeIn" : "opacity-0"
             }`}
           >
             <Link

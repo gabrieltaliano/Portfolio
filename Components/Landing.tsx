@@ -9,24 +9,6 @@ import dynamic from "next/dynamic";
 import AnimatedCorners from "./AnimatedCorners";
 
 const Matrix = dynamic(() => import("./Matrix"));
-function useOnlineStatus() {
-  const [isOnline, setIsOnline] = useState(true);
-  useEffect(() => {
-    function handleOnline() {
-      setIsOnline(true);
-    }
-    function handleOffline() {
-      setIsOnline(false);
-    }
-    window.addEventListener("online", handleOnline);
-    window.addEventListener("offline", handleOffline);
-    return () => {
-      window.removeEventListener("online", handleOnline);
-      window.removeEventListener("offline", handleOffline);
-    };
-  }, []);
-  return isOnline;
-}
 
 export default function Landing({ stack }: { stack: any }) {
   const [width, setWidth] = useState(0);
@@ -50,7 +32,7 @@ export default function Landing({ stack }: { stack: any }) {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  const isOnlineeee = useOnlineStatus();
+
   return (
     <div className="min-h-screen grow flex flex-nowrap flex-col overflow-hidden justify-center items-center relative bg-black">
       <div className="w-full h-full flex flex-col justify-center items-center gap-0">
@@ -67,8 +49,8 @@ export default function Landing({ stack }: { stack: any }) {
           className="duration-500 w-full text-black bg-white mix-blend-screen z-20 flex"
         >
           <SizedText
-            className="text-black mx-auto font-alfa-slab uppercase fadein pt-2"
-            text={`Gabriel Taliano (${isOnlineeee ? "online" : "offline"})`}
+            className="text-black mx-auto font-alfa-slab uppercase fadeIn pt-2"
+            text="Gabriel Taliano"
           />
         </ShowOnScroll>
         <ShowOnScroll
@@ -77,7 +59,7 @@ export default function Landing({ stack }: { stack: any }) {
           className="duration-500 w-full text-black bg-white mix-blend-screen z-20 flex"
         >
           <SizedText
-            className="text-black mx-auto font-alfa-slab uppercase fadein pt-2"
+            className="text-black mx-auto font-alfa-slab uppercase fadeIn pt-2"
             text="Full-Stack Web Developer"
           />
         </ShowOnScroll>
@@ -87,7 +69,7 @@ export default function Landing({ stack }: { stack: any }) {
           className="duration-500 w-full text-black bg-white mix-blend-screen z-20 flex"
         >
           <SizedText
-            className="text-black mx-auto font-IBM-Plex-Mono fadein delayed-900 pt-2"
+            className="text-black mx-auto font-IBM-Plex-Mono fadeIn delayed-900 pt-2"
             text="with a sysadmin background"
           />
         </ShowOnScroll>

@@ -53,10 +53,10 @@ a {
   transform: translateY(0%);
   opacity: 1;
 }
-.fadein {
+.fadeIn {
   --duration: 1500ms;
   opacity: 0;
-  animation: fadein var(--duration) ease-in-out forwards;
+  animation: fadeIn var(--duration) ease-in-out forwards;
 }
 .delayed-900 {
   animation-delay: 900ms;
@@ -70,7 +70,7 @@ a {
   animation: cursor var(--duration) ease-in-out alternate infinite,
     border var(--duration) ease-in-out alternate infinite;
 }
-@keyframes fadein {
+@keyframes fadeIn {
   from {
     opacity: 0;
   }
