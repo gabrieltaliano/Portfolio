@@ -7,8 +7,8 @@ import Title from "./Title";
 
 export default function Project({ project }: { project: work; key: string }) {
   const size=project.name == "Mediafly"
-          ? "mx-[25%] px-[10vw]"
-          : "md:min-w-0 min-w-[80vw] max-w-xl"
+          ? "mx-[15%] px-[10vw]"
+          : "w-1/4"
     return (
     <AnimatedCorners
       className={`bg-green-800/5 ${size}`}
@@ -18,12 +18,12 @@ export default function Project({ project }: { project: work; key: string }) {
         style={{ flexBasis: `${40}%` }}
       >
         <Title text={project.name} />
-        <Description text={project.description} />
         <Preview
           img={project.img}
           url={project.url}
           project_name={project.name}
         />
+        <Description text={project.description} />
         <Stack stack={project.stack} project_name={project.name} />
       </div>
     </AnimatedCorners>

@@ -8,7 +8,7 @@ export default function Quote() {
 
   return (
     <div
-      className="grow flex flex-col justify-center items-center relative bg-black"
+      className="grow flex flex-col justify-center items-center relative bg-black snap-center"
       id="quote"
     >
       <div className="absolute bottom-0 w-full h-1/3 bg-gradient-to-b from-[hsla(0,0%,0%,1)] via-[#001105] to-[#051a0b] z-0" />

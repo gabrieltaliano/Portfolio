@@ -23,7 +23,7 @@ export default function Container({ children }: any) {
 
     return (
       <main
-        className="h-full flex flex-col grow bg-gray-400 overflow-auto scroll-smooth select-none"
+        className="h-full flex flex-col grow bg-gray-400 overflow-auto scroll-smooth select-none snap-y"
         ref={containerRef}
         onScroll={handleScroll}
       >

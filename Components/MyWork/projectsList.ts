@@ -37,10 +37,8 @@ const projects: work[] = [
         name: "Mediafly",
         url: "https://www.mediafly.com/",
         img: [{ src: mediafly.src, orientation: "h" }],
-        description: `• API integration project in Javascript
-• Query modeling for Redis with utility functions
-• Angular to React migration (micro-frontend)
-• Development of visualization modules in react and recharts`,
+        description: `I was responsible for improving and creating new reports and visualization features, and developing functional components, mainly using react, angular, MUI, recharts, storybook, jest as well as elasticSearch, mocha and node.
+In addition, I collaborated on integrating 3rd party APIs to link the applications with external data sources and services using node.js in a dockerized environment.`,
         stack: [
             javascript,
             restApi,
@@ -57,7 +55,8 @@ const projects: work[] = [
         stack: [
             tailwind,
             vercel,
-            react_tech
+            react_tech,
+            next_tech
         ],
     },
     {
@@ -96,9 +95,9 @@ const projects: work[] = [
     },
     {
         name: "My Random Kana",
-        url: "https://myrandomkana.web.app/",
+        url: "https://my-random-kana.vercel.app",
         img: [{ src: rk.src, orientation: "v" }],
-        description: `Game for memorice japanese alphabet. React native version in progress...`,
+        description: `Game for memorize japanese alphabet`,
         stack: [
             react_tech,
             typeScript,
