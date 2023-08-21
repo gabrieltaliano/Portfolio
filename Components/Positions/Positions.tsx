@@ -2,7 +2,7 @@ import ShowOnScroll from "../ShowOnScroll";
 import positions from "./positionList";
 export default function Positions() {
   return (
-    <div className="min-h-[60vh] grow flex  flex-col items-center p-4 justify-evenly">
+    <div className="min-h-[60vh] grow flex flex-col items-center justify-evenly lg:max-w-4xl xl:max-w-6xl">
       <ShowOnScroll
         className="duration-300 text-green-400 gap-x-2 group flex"
         offset={-800}

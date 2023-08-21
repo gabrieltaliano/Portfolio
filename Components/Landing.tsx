@@ -1,13 +1,9 @@
 import { useEffect, useState } from "react";
-// import { Matrix4 } from "./Matrix";
-
 import Link from "next/link";
-
 import ShowOnScroll from "./ShowOnScroll";
 import SizedText from "./SizedText";
 import dynamic from "next/dynamic";
 import AnimatedCorners from "./AnimatedCorners";
-
 const Matrix = dynamic(() => import("./Matrix"));
 
 export default function Landing({ stack }: { stack: any }) {

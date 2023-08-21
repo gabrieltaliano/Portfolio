@@ -17,9 +17,14 @@ export default function Quote() {
         className="duration-700 flex grow flex-col justify-evenly z-10 gap-24 lg:gap-0 max-w-4xl py-8 min-h-screen"
         offset={500}
       >
-        <h2 className="text-green-400 text-5xl font-IBM-Plex-Mono font pt-2">
+        <h2 className="text-green-400 text-5xl font-IBM-Plex-Mono font pt-2 text-center">
           Passionate about technology, electronics, IoT and web development{" "}
-          <span className="text-green-800">(and photograpy)</span>
+          <Link
+            href="https://500px.com/gabrieltaliano"
+            className="text-green-800"
+          >
+            (and photograpy)
+          </Link>
         </h2>
 
         <ShowOnScroll

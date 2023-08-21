@@ -1,4 +1,4 @@
-import { useEffect, useRef, ReactNode } from 'react'
+import { useEffect, useRef } from 'react'
 import useScroll from '../Hooks/useScroll';
 
 export default function Container({ children }: any) {
